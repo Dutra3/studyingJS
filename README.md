@@ -1,0 +1,2 @@
+# studyingJS
+Coding in JS
