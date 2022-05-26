@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/dark-mode/style.css" />
+		<title>Dark mode and Light Mode</title>
+	</head>
+	<body>
+		<main>
+			<h1 id="page-title">Light Mode ON</h1>
+			<button aria-label="selecionar-modo" id="mode-selector">Dark Mode</button>
+		</main>
+
+		<footer class="lastItem">Basecamp Javascript @ Digital Innovation One</footer>
+		<script src="/dark-mode/script.js"></script>
+	</body>
+</html>
+
+
+<!-- O esquema aqui é o seguinte:
+  Eu crio no CSS a configuração da classe DARK-MODE.
+  Mas eu não dou ela pra NGM, mas deixo ela preparada já.
+  No JS eu vou la, e usso o toggle para ADD a classe DARK-MODE para aqueles itens
+que eu quero mudar, ao selecionar o dark-mode.
+  Com isso, ao clicar no botao, ele add a classe, e as alterações, são feitas
+de forma "automatica", puxando a config que deixei no CSS.
+  Uso o toggle, pois se eu já estiver no dark-mode, ao selecionar novamente, ele retira a classe dark-mode
+na verdade, ele colocar e retira a classe que ta escrito ali, posso fazer isso para outras necessidades tbm
+  Ou seja, deixo o css pronto para a classe dark-mode e uso o toggle no js para atribuir aos elementos que eu quero
+e ao ativar uma segunda vez, ele retira de todos aqueles que ele colocou anteriormente.-->
