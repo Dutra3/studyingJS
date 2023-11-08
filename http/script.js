@@ -30,6 +30,12 @@ const handleFile = (req, res, callback) => {
 
 const handleRequest = (req, res) => {
     let path = url.parse(req.url).pathname;
+    let method = req.method;
+
+    if (method == 'PUT') {
+        res.writeHead(404, {"Content-Type": "text/html"});
+    }
+
     if (path == "/teste") {
         res.end("Teste");
         return true;
