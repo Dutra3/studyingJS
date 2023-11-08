@@ -11,6 +11,21 @@ app.get("/", (req, res) => {
     res.send("Method GET")
 })
 
+app.post("/", (req, res) => {
+    res.type("html");
+    res.send("Method POST")
+})
+
+app.put("/", (req, res) => {
+    res.type("html");
+    res.send("Method PUT")
+})
+
+app.delete("/", (req, res) => {
+    res.type("html");
+    res.send("Method DELETE")
+})
+
 app.listen(PORT, () => {
     console.log(`Server is running on Port:${PORT}`);
 });
