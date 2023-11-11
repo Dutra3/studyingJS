@@ -1,12 +1,24 @@
-import { createServer } from 'node:http';
+import { fastify } from 'fastify';
+import { DatabaseMemory } from './database.memory.js';
 
-const server = createServer((request, response) => {
-    response.write('Server is running on Port 3333');
+const server = fastify()
 
-    return response.end();
-});
+server.get('/videos', () => {
+    return 'Hello World';
+})
 
+server.post('/videos', () => {
+    return 'Hello World';
+})
 
+server.put('/videos/:id', () => {
+    return 'Hello World';
+})
 
+server.delete('/videos/:id', () => {
+    return 'Hello World';
+})
 
-server.listen(3333);
+server.listen({
+    port: 3333,
+})
