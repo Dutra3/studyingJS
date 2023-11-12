@@ -22,8 +22,17 @@ server.post('/videos', (request, reply) => {
     return reply.status(201).send();
 })
 
-server.put('/videos/:id', () => {
-    return 'Hello World';
+server.put('/videos/:id', (request, reply) => {
+    const videoId = request.params.id;
+    const { title, description, duration } = request.body;
+
+    database.update(videoId, {
+        title,
+        description,
+        duration,
+    })
+
+    return reply.status(204).send();
 })
 
 server.delete('/videos/:id', () => {
