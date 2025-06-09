@@ -4,7 +4,10 @@ import (
 	"log"
 	"net/http"
 	"simple-crud-api/config"
+	"simple-crud-api/handlers"
 	"simple-crud-api/models"
+
+	"github.com/gorilla/mux"
 )
 
 func main() {
@@ -16,5 +19,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	router := mux.NewRouter()
+
+	taskHandler := handlers.NewTaskHandler(dbConnection)
+
+	router.HandleFunc("/tasks", taskHandler.ReadTasks).Methods("GET")
+
+	log.Fatal(http.ListenAndServe(":8080", router))
 }
