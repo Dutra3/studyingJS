@@ -24,6 +24,9 @@ func main() {
 	taskHandler := handlers.NewTaskHandler(dbConnection)
 
 	router.HandleFunc("/tasks", taskHandler.ReadTasks).Methods("GET")
+	router.HandleFunc("/tasks", taskHandler.CreateTask).Methods("POST")
+	// router.HandleFunc("/tasks/{id}", taskHandler.UpdateTask).Methods("PUT")
+	// router.HandleFunc("/tasks/{id}", taskHandler.DeleteTask).Methods("DELETE")
 
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
