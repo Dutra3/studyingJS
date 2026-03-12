@@ -1,22 +1,6 @@
-class Repository<T> {
-
-    constructor(public list: T[]) {
-    }
-
-    add(item: T): void {
-        this.list.push(item);
-    }
-}
-
-class Person {
-    constructor(readonly name: string, readonly age: number) {
-    }
-}
-
-class Book {
-    constructor(public title: string, public author: string, public year?: number) {
-    }
-}
+import { Repository } from "./Repository";
+import { Person } from "./Person";
+import { Book } from "./Book";
 
 const peopleRepo = new Repository<Person>([]);
 peopleRepo.add(new Person("Alice", 30));
