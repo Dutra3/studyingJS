@@ -6,5 +6,8 @@
   "dependencies": {
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/pg-promise": "^5.4.3"
   }
 }
